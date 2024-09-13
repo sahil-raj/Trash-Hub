@@ -57,7 +57,7 @@ export default function Navbar() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            Logo
+            Trash Hub
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -261,41 +261,41 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: "Inspiration",
+    label: "Home",
     children: [
       {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
+        label: "Link 1",
+        subLabel: "desc",
         href: "#",
       },
       {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
+        label: "Link 2",
+        subLabel: "desc",
         href: "#",
       },
     ],
   },
   {
-    label: "Find Work",
+    label: "About Us",
     children: [
       {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
+        label: "Link 1",
+        subLabel: "desc",
         href: "#",
       },
       {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
+        label: "Link 2",
+        subLabel: "desc",
         href: "#",
       },
     ],
   },
   {
-    label: "Learn Design",
+    label: "Our Aim",
     href: "#",
   },
   {
-    label: "Hire Designers",
+    label: "Contact Us",
     href: "#",
   },
 ];
