@@ -1,16 +1,15 @@
-// import Footer from "./components/Footer";
-// import Navbar from "./components/Navbar";
-import AboutUs from "./components/Aboutus";
-import Home from "./components/Home";
-
-
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Aim from "./components/Aim";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   return (
     <>
-      <Home/>
-      <AboutUs/>
-   
+      <Navbar />
+      <Aim></Aim>
+      <ContactUs></ContactUs>
+      <Footer />
     </>
   );
 }
