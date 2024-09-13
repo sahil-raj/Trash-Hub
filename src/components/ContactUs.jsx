@@ -5,14 +5,17 @@ import {
   Box,
   Heading,
   Text,
-  Image,
   Icon,
   useColorModeValue,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Button,
 } from "@chakra-ui/react";
 
-import placeHolder from "../assets/placeHolder.jpg";
+import { AtSignIcon, PhoneIcon, SunIcon } from "@chakra-ui/icons";
 
-export default function Aim() {
+export default function ContactUs() {
   return (
     <Container maxW={"7xl"} overflowX={"hidden"}>
       <Stack
@@ -41,12 +44,9 @@ export default function Aim() {
                 zIndex: -1,
               }}
             >
-              Our Aim
+              Contact Us
             </Text>
             <br />
-            <Text as={"span"} color={"red.400"}>
-              at TrashHub
-            </Text>
           </Heading>
           <Text color={"gray.500"}>
             The main goal of Trash Hub is to be the one stop solution for all
@@ -78,14 +78,36 @@ export default function Aim() {
             width={"full"}
             overflow={"hidden"}
           >
-            <Image
-              alt={"Hero Image"}
-              fit={"cover"}
-              align={"center"}
-              w={"100%"}
-              h={"100%"}
-              src={placeHolder}
-            />
+            <Stack spacing={4} width={"75%"}>
+              <InputGroup>
+                <InputLeftElement
+                  pointerEvents="none"
+                  color="gray.300"
+                  fontSize="1.2em"
+                >
+                  <SunIcon color="gray.300" />
+                </InputLeftElement>
+                <Input type="text" placeholder="Name" />
+              </InputGroup>
+
+              <InputGroup>
+                <InputLeftElement pointerEvents="none">
+                  <PhoneIcon color="gray.300" />
+                </InputLeftElement>
+                <Input type="tel" placeholder="Phone number" />
+              </InputGroup>
+
+              <InputGroup>
+                <InputLeftElement pointerEvents="none">
+                  <AtSignIcon color="gray.300" />
+                </InputLeftElement>
+                <Input type="email" placeholder="Email" />
+              </InputGroup>
+
+              <Button colorScheme="teal" variant="outline">
+                Submit
+              </Button>
+            </Stack>
           </Box>
         </Flex>
       </Stack>
