@@ -1,11 +1,16 @@
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
+// import Navbar from "./components/Navbar";
+import AboutUs from "./components/Aboutus";
+import Home from "./components/Home";
+
+
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Footer />
+      <Home/>
+      <AboutUs/>
+   
     </>
   );
 }
