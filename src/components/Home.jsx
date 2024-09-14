@@ -36,6 +36,7 @@ export default function Home() {
                 bottom: 1,
                 left: 0,
                 bg: "red.400",
+                color: 'black',
                 zIndex: -1,
               }}
             >
