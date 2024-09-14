@@ -1,4 +1,4 @@
-import { Text, Heading } from "@chakra-ui/react";
+import { SkeletonText, Heading, Text, Box } from "@chakra-ui/react";
 import ProductAnalyticsCard from "./ProductAnalyticsCard";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -65,6 +65,23 @@ export default function Analytics() {
             />
           );
         })}
+      {analyticsData.length == 0 && (
+        <Box
+          mt="4rem"
+          ml="25%"
+          width="50%"
+          padding="6"
+          boxShadow="lg"
+          bg="white"
+        >
+          <SkeletonText
+            my="1rem"
+            noOfLines={5}
+            spacing="4"
+            skeletonHeight="2"
+          />
+        </Box>
+      )}
     </>
   );
 }
