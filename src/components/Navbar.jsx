@@ -13,6 +13,8 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Divider,
+  Center,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -76,7 +78,20 @@ export default function Navbar() {
             justify={"flex-end"}
             direction={"row"}
             spacing={6}
+            color={'black'}
           >
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"https://trashtag.vercel.app/ecoperks/vendor/login"}
+            >
+              Vendor Sign In
+            </Button>
+            <Center height='40px' color={'green'}>
+              <Divider orientation='vertical' bgColor={'red'} />
+            </Center>
             <Button
               as={"a"}
               fontSize={"sm"}
