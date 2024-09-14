@@ -7,12 +7,14 @@ import AboutUs from "./components/Aboutus";
 import QRCard from "./components/QRCard";
 import Products from "./components/Products";
 import ProductList from "./components/ProductList";
+import OverlayForm from "./components/OverlayForm";
 function App() {
   return (
     <>
    
       <Navbar />
       <Products></Products>
+      <OverlayForm/>
       <Home />
       <AboutUs />
       <Aim></Aim>

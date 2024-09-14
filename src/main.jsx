@@ -12,7 +12,7 @@ import Aim from "./components/Aim";
 import ContactUs from "./components/ContactUs";
 import ProductList from "./components/ProductList";
 import App from "./App";
-import Manufacturer from "./components/Manufacturer";
+
 
 const rootElement = document.getElementById("root");
 
@@ -39,7 +39,8 @@ const router = createBrowserRouter([{
 {
   path:"/ProductList",
   element:<ProductList/>
-}]);
+}
+]);
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
