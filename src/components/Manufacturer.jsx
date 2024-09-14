@@ -1,7 +1,7 @@
 import {Container,Stack,Flex,Box,Heading,Text,Image,Icon,useColorModeValue,} from "@chakra-ui/react";
 import placeHolder from "../assets/placeHolder.jpg";
 import { Button, ButtonGroup } from '@chakra-ui/react'
-  
+import OverlayForm from "./OverlayForm";
   export default function Manufacturer({Name="Manufacturer"}) {
     return (
       <Container overflowX={"hidden"} maxW={"7xl"}>
@@ -47,9 +47,9 @@ import { Button, ButtonGroup } from '@chakra-ui/react'
     Analytics
   </Button>
  
-  <Button colorScheme='red' size='lg'>
-    Create Batch
-  </Button>
+  
+    <OverlayForm/>
+  
 </Stack>
           </Stack>
           <Flex

@@ -14,7 +14,7 @@ function App() {
    
       <Navbar />
       <Products></Products>
-      <OverlayForm/>
+      
       <Home />
       <AboutUs />
       <Aim></Aim>

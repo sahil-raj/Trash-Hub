@@ -30,14 +30,14 @@ export default function OverlayForm() {
 
   return (
     <div>
-      <Button
-        ml='4'
+      <Button colorScheme='red' size='lg'
+        
         onClick={() => {
           setOverlay(<OverlayTwo />)
           onOpen()
         }}
       >
-        Click for overlay
+        Create Product
       </Button>
 
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
