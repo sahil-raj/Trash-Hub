@@ -5,6 +5,7 @@ export default function Analytics() {
   return (
     <>
       <Heading
+        marginTop={"2%"}
         lineHeight={1.1}
         fontWeight={600}
         fontSize={{ base: "3xl", sm: "4xl", lg: "6xl" }}
@@ -28,7 +29,17 @@ export default function Analytics() {
         </Text>
       </Heading>
       <ProductAnalyticsCard
-        product="P1"
+        productName="P1"
+        batches={[
+          { name: "test", total: 100, disposed: 77 },
+          { name: "test2", total: 100, disposed: 69 },
+          { name: "test2", total: 100, disposed: 6 },
+          { name: "test2", total: 100, disposed: 0 },
+        ]}
+      />
+
+      <ProductAnalyticsCard
+        productName="P2"
         batches={[
           { name: "test", total: 100, disposed: 77 },
           { name: "test2", total: 100, disposed: 69 },

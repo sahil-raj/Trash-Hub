@@ -11,12 +11,15 @@ import {
 } from "@chakra-ui/react";
 
 // eslint-disable-next-line react/prop-types
-const ProductAnalyticsCard = ({ product = "Product Name", batches = [] }) => {
+const ProductAnalyticsCard = ({
+  productName = "Product Name",
+  batches = [],
+}) => {
   return (
     <>
       <Stack divider={<StackDivider />}>
-        <Box>
-          <Heading>{product}</Heading>
+        <Box marginTop={"1%"}>
+          <Heading>{productName}</Heading>
           <Stack divider={<StackDivider />} spacing="4">
             {/* repeat start*/}
             {batches.map((batch) => (
