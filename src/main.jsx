@@ -15,6 +15,7 @@ import App from "./App";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import Analytics from "./components/Analytics";
+import Batches from "./components/Batches";
 
 const rootElement = document.getElementById("root");
 
@@ -54,8 +55,11 @@ const router = createBrowserRouter([
   {
     path: "/Analytics",
     element: <Analytics />,
-  }
- 
+  },
+  {
+    path: "/Batches",
+    element: <Batches />,
+  },
 ]);
 
 ReactDOM.createRoot(rootElement).render(
