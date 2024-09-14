@@ -22,7 +22,8 @@ export default function ContactUs() {
         align={"center"}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 20, md: 28 }}
-        direction={{ base: "column", md: "row" }}
+        direction={{ base: "column", md: "row" }
+      }
       >
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>
           <Heading
@@ -78,7 +79,7 @@ export default function ContactUs() {
             width={"full"}
             overflow={"hidden"}
           >
-            <Stack spacing={4} width={"75%"}>
+            <Stack spacing={4} width={"75%"} paddingLeft={"25%"} paddingTop={"8%"}>
               <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
