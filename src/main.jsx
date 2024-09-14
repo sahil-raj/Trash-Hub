@@ -12,51 +12,57 @@ import Aim from "./components/Aim";
 import ContactUs from "./components/ContactUs";
 import ProductList from "./components/ProductList";
 import App from "./App";
-import Manufacturer from "./components/Manufacturer";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
+import Analytics from "./components/Analytics";
 
 const rootElement = document.getElementById("root");
 
-const router = createBrowserRouter([{
-  path: "/",
-  element: <Home />
-},
-{
-  path: "/Aim",
-  element: <Aim />
-},
-{
-  path: "/ContactUs",
-  element: <ContactUs />
-},
-{
-  path: "/AboutUs",
-  element: <AboutUs />
-},
-{
-  path:"/App",
-  element:<App/>
-},
-{
-  path:"/ProductList",
-  element:<ProductList/>
-},
-{
-  path: "/signin",
-  element: <SignIn />
-},
-{
-  path: "/signup",
-  element: <SignUp />
-}]);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/Aim",
+    element: <Aim />,
+  },
+  {
+    path: "/ContactUs",
+    element: <ContactUs />,
+  },
+  {
+    path: "/AboutUs",
+    element: <AboutUs />,
+  },
+  {
+    path: "/App",
+    element: <App />,
+  },
+  {
+    path: "/ProductList",
+    element: <ProductList />,
+  },
+  {
+    path: "/signin",
+    element: <SignIn />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
+    path: "/Analytics",
+    element: <Analytics />,
+  },
+]);
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <ChakraProvider>
       <Navbar />
-    <RouterProvider router={router} />
-    <Footer />
+      <RouterProvider router={router} />
+      <Footer />
     </ChakraProvider>
   </React.StrictMode>
 );
