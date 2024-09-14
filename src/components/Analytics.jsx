@@ -1,7 +1,28 @@
 import { Text, Heading } from "@chakra-ui/react";
 import ProductAnalyticsCard from "./ProductAnalyticsCard";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export default function Analytics() {
+  const [analyticsData, setAnalyticsData] = useState([]);
+
+  useEffect(() => {
+    const myFunc = async () => {
+      let res = await axios.get(
+        `https://trashtag.vercel.app/ecoperks/manufacturer/${localStorage.getItem(
+          "userId"
+        )}/analytics/api`
+      );
+
+      if (res.status == 200) {
+        setAnalyticsData(res.data);
+      } else {
+        alert("error fetching data");
+      }
+    };
+    myFunc();
+  }, []);
+
   return (
     <>
       <Heading
@@ -28,7 +49,23 @@ export default function Analytics() {
           Disposal Analytics
         </Text>
       </Heading>
-      <ProductAnalyticsCard
+      {analyticsData.length > 0 &&
+        analyticsData.map((product) => {
+          return (
+            <ProductAnalyticsCard
+              key={product.product_id}
+              productName={product.product}
+              batches={product.data.map((el) => {
+                return {
+                  name: el.batch_id,
+                  disposed: el.disposed,
+                  total: el.batch_size,
+                };
+              })}
+            />
+          );
+        })}
+      {/* {/* <ProductAnalyticsCard
         productName="P1"
         batches={[
           { name: "test", total: 100, disposed: 77 },
@@ -36,15 +73,7 @@ export default function Analytics() {
           { name: "test2", total: 100, disposed: 6 },
           { name: "test2", total: 100, disposed: 0 },
         ]}
-      />
-
-      <ProductAnalyticsCard
-        productName="P2"
-        batches={[
-          { name: "test", total: 100, disposed: 77 },
-          { name: "test2", total: 100, disposed: 69 },
-        ]}
-      />
+      /> */}
     </>
   );
 }

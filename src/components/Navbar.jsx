@@ -103,22 +103,38 @@ export default function Navbar() {
           </Stack>
         )}
         {isLoggedIn && (
-          <Button
-            onClick={() => {
-              localStorage.removeItem("userId");
-              window.location.reload();
-            }}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Sign out
-          </Button>
+          <>
+            <Button
+              display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              color={"white"}
+              bg={"pink.400"}
+              _hover={{
+                bg: "pink.300",
+              }}
+            >
+              Dashboard
+            </Button>
+
+            <Button
+              onClick={() => {
+                localStorage.removeItem("userId");
+                window.location.reload();
+              }}
+              display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              color={"white"}
+              bg={"pink.400"}
+              marginX={"1rem"}
+              _hover={{
+                bg: "pink.300",
+              }}
+            >
+              Sign out
+            </Button>
+          </>
         )}
       </Flex>
 

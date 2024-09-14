@@ -24,7 +24,7 @@ const ProductAnalyticsCard = ({
             {/* repeat start*/}
             {batches.map((batch) => (
               <Card
-                key={batch}
+                key={batch.name}
                 textAlign={"center"}
                 size={"lg"}
                 variant="elevated"
