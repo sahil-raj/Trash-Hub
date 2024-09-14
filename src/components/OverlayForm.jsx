@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Modal,
   ModalOverlay,
@@ -8,33 +8,60 @@ import {
   ModalBody,
   ModalCloseButton,
   Button,
-  Text,
   useDisclosure,
   Stack,
-  Input
-} from '@chakra-ui/react'
+  Input,
+  useToast,
+} from "@chakra-ui/react";
+import axios from "axios";
 
-export default function OverlayForm({title="Create Product", Desc="Product Name",place="Kurkure"}) {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  
+export default function OverlayForm({
+  title = "Create Product",
+  Desc = "Product Name",
+  place = "Kurkure",
+}) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const OverlayTwo = () => (
     <ModalOverlay
-      bg='none'
-      backdropFilter='auto'
-      backdropInvert='70%'
-      backdropBlur='2px'
+      bg="none"
+      backdropFilter="auto"
+      backdropInvert="70%"
+      backdropBlur="2px"
     />
-  )
+  );
 
-  const [overlay, setOverlay] = React.useState(<OverlayTwo />)
+  const [overlay, setOverlay] = React.useState(<OverlayTwo />);
+  const [name, setName] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
+
+  const toast = useToast();
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    const res = await axios.post(
+      `https://trashtag.vercel.app/ecoperks/manufacturer/create_product`,
+      {
+        manufacturer_id: localStorage.getItem("userId"),
+        product_name: name,
+      }
+    );
+    if (res.status == 200) {
+      onClose();
+    } else {
+      toast("Server Error Occurred");
+    }
+    setLoading(false);
+  };
 
   return (
     <div>
-      <Button colorScheme='red' size='lg'
-        
+      <Button
+        colorScheme="red"
+        size="lg"
         onClick={() => {
-          setOverlay(<OverlayTwo />)
-          onOpen()
+          setOverlay(<OverlayTwo />);
+          onOpen();
         }}
       >
         {title}
@@ -46,16 +73,29 @@ export default function OverlayForm({title="Create Product", Desc="Product Name"
           <ModalHeader>Enter {Desc}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-          <Input variant='filled' placeholder={place} />
+            <Input
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              variant="filled"
+              placeholder={place}
+            />
           </ModalBody>
           <ModalFooter>
             <Stack direction="row" spacing={4}>
-            <Button  onClick={onClose}>Cancel</Button>
-            <Button colorScheme='red' >Submit</Button>
+              <Button onClick={onClose}>Cancel</Button>
+              <Button
+                isLoading={loading}
+                onClick={handleSubmit}
+                colorScheme="red"
+              >
+                Submit
+              </Button>
             </Stack>
           </ModalFooter>
         </ModalContent>
       </Modal>
     </div>
-  )
+  );
 }
