@@ -65,15 +65,6 @@ export default function Analytics() {
             />
           );
         })}
-      {/* {/* <ProductAnalyticsCard
-        productName="P1"
-        batches={[
-          { name: "test", total: 100, disposed: 77 },
-          { name: "test2", total: 100, disposed: 69 },
-          { name: "test2", total: 100, disposed: 6 },
-          { name: "test2", total: 100, disposed: 0 },
-        ]}
-      /> */}
     </>
   );
 }
