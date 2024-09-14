@@ -50,9 +50,7 @@ export default function ContactUs() {
             <br />
           </Heading>
           <Text color={"gray.500"}>
-            The main goal of Trash Hub is to be the one stop solution for all
-            waste management needs right from the start of the supply chain to
-            the end consumer and recycling agencies.
+          The main goal of Trash Hub is to reduce waste pollution by promoting responsible waste disposal through a tech-driven, incentivized system. We make use of QR codes to guide and reward consumers for promoting waste segregation and disposal.
           </Text>
         </Stack>
         <Flex
