@@ -9,18 +9,20 @@ import Products from "./components/Products";
 import ProductList from "./components/ProductList";
 import OverlayForm from "./components/OverlayForm";
 import Batches from "./components/Batches";
+import QROverlay from "./components/QROverlay";
 function App() {
   return (
     <>
    
       <Navbar />
+      <Batches/>
       <Products></Products>
       <Batches/>
       <Home />
       <AboutUs />
       <Aim></Aim>
       <ContactUs></ContactUs>
-      <QRCard qrData="test" qrHeading="test QR" qrText="lorem ipsum" />
+     
       <Footer />
     </>
   );
