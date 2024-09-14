@@ -27,7 +27,7 @@ export default function Products({title="Product Title", desc="Product Descripti
     </CardBody>
 
     <CardFooter>
-      <Button variant='solid' colorScheme='blue'>
+      <Button variant='solid' colorScheme='red'>
         View QR Set
       </Button>
     </CardFooter>

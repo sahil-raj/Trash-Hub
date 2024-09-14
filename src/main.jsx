@@ -12,6 +12,7 @@ import Aim from "./components/Aim";
 import ContactUs from "./components/ContactUs";
 import ProductList from "./components/ProductList";
 import App from "./App";
+import Manufacturer from "./components/Manufacturer";
 
 const rootElement = document.getElementById("root");
 
