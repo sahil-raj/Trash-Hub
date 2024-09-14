@@ -73,7 +73,7 @@ import placeHolder from "../assets/placeHolder.jpg";
                 align={"center"}
                 w={"100%"}
                 h={"100%"}
-                src={placeHolder}
+                src={'bg.jpg'}
               />
             </Box>
           </Flex>
