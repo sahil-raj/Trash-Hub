@@ -15,7 +15,7 @@ import QRCard from "./QRCard";
 
 export default function QROverlay({ id }) {
   console.log(id);
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onClose } = useDisclosure();
   const [scrollBehavior] = React.useState("inside");
 
   const btnRef = React.useRef(null);

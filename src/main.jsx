@@ -66,7 +66,7 @@ ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <ChakraProvider>
       <Navbar />
-      <RouterProvider router={router} />
+      <RouterProvider router={router}></RouterProvider>
       <Footer />
     </ChakraProvider>
   </React.StrictMode>

@@ -78,7 +78,6 @@ export default function Navbar() {
             spacing={6}
           >
             <Button
-              as={"a"}
               fontSize={"sm"}
               fontWeight={400}
               variant={"link"}
