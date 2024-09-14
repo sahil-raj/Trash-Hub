@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Aim from "./components/Aim";
 import ContactUs from "./components/ContactUs";
 import Home from "./components/Home";
-import AboutUs from "./components/Aboutus";
+import AboutUs from "./components/About-Us";
 import QRCard from "./components/QRCard";
 import Products from "./components/Products";
 import ProductList from "./components/ProductList";
@@ -13,16 +13,15 @@ import QROverlay from "./components/QROverlay";
 function App() {
   return (
     <>
-   
       <Navbar />
-      <Batches/>
+      <Batches />
       <Products></Products>
-      <Batches/>
+      <Batches />
       <Home />
       <AboutUs />
       <Aim></Aim>
       <ContactUs></ContactUs>
-     
+
       <Footer />
     </>
   );

@@ -1,19 +1,16 @@
-import React from "react";
 import {
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
   Stack,
   Heading,
-  Text,
   Image,
   Button,
 } from "@chakra-ui/react";
 import placeHolder from "../assets/placeHolder.jpg";
 import { useNavigate } from "react-router-dom";
 
-export default function Products({ title = "Product Title", img }) {
+export default function Products({ title = "Product Title", img, id }) {
   const navigate = useNavigate();
 
   return (
@@ -37,7 +34,7 @@ export default function Products({ title = "Product Title", img }) {
 
         <CardFooter>
           <Button
-            onClick={() => navigate("/Batches")}
+            onClick={() => navigate(`/Batches/${id}`)}
             variant="solid"
             colorScheme="red"
           >

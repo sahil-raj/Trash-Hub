@@ -28,7 +28,9 @@ export default function ProductList() {
       <Manufacturer />
       {loadedProduct.length > 0 ? (
         loadedProduct.map((product) => {
-          return <Products title={product.name} key={product.id} />;
+          return (
+            <Products id={product.id} title={product.name} key={product.id} />
+          );
         })
       ) : (
         <Heading textAlign="center">

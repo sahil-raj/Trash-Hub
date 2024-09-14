@@ -12,6 +12,7 @@ import {
 import placeHolder from "../assets/placeHolder.jpg";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import OverlayForm from "./OverlayForm";
+import { Link } from "react-router-dom";
 
 export default function Manufacturer({ Name = "Manufacturer" }) {
   return (
@@ -55,7 +56,7 @@ export default function Manufacturer({ Name = "Manufacturer" }) {
           </Text>
           <Stack spacing={4} direction="row" align="center">
             <Button colorScheme="red" size="lg">
-              Analytics
+              <Link to="/Analytics">Analytics</Link>
             </Button>
 
             <OverlayForm />

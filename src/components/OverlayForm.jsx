@@ -19,6 +19,7 @@ export default function OverlayForm({
   title = "Create Product",
   Desc = "Product Name",
   place = "Kurkure",
+  id = null,
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -34,18 +35,31 @@ export default function OverlayForm({
   const [overlay, setOverlay] = React.useState(<OverlayTwo />);
   const [name, setName] = React.useState("");
   const [loading, setLoading] = React.useState(false);
+  const [size, setSize] = React.useState(0);
 
   const toast = useToast();
 
   const handleSubmit = async () => {
     setLoading(true);
-    const res = await axios.post(
-      `https://trashtag.vercel.app/ecoperks/manufacturer/create_product`,
-      {
-        manufacturer_id: localStorage.getItem("userId"),
-        product_name: name,
-      }
-    );
+    let res;
+    if (title === "Create new batch") {
+      res = await axios.post(
+        `https://trashtag.vercel.app/ecoperks/manufacturer/create_batch`,
+        {
+          manufacturer_id: localStorage.getItem("userId"),
+          product_id: id,
+          size: Number(size),
+        }
+      );
+    } else {
+      res = await axios.post(
+        `https://trashtag.vercel.app/ecoperks/manufacturer/create_product`,
+        {
+          manufacturer_id: localStorage.getItem("userId"),
+          product_name: name,
+        }
+      );
+    }
     if (res.status == 200) {
       onClose();
     } else {
@@ -81,6 +95,17 @@ export default function OverlayForm({
               variant="filled"
               placeholder={place}
             />
+            {title === "Create new batch" && (
+              <Input
+                value={size}
+                onChange={(e) => {
+                  setSize(e.target.value);
+                }}
+                marginTop={5}
+                variant="filled"
+                placeholder={"Batch Size"}
+              />
+            )}
           </ModalBody>
           <ModalFooter>
             <Stack direction="row" spacing={4}>
