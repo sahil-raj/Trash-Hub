@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import AboutUs from "./components/Aboutus";
 import Aim from "./components/Aim";
 import ContactUs from "./components/ContactUs";
+import ProductList from "./components/ProductList";
+import App from "./App";
 
 const rootElement = document.getElementById("root");
 
@@ -28,6 +30,14 @@ const router = createBrowserRouter([{
 {
   path: "/AboutUs",
   element: <AboutUs />
+},
+{
+  path:"/App",
+  element:<App/>
+},
+{
+  path:"/ProductList",
+  element:<ProductList/>
 }]);
 
 ReactDOM.createRoot(rootElement).render(
