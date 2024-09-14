@@ -8,13 +8,14 @@ import QRCard from "./components/QRCard";
 import Products from "./components/Products";
 import ProductList from "./components/ProductList";
 import OverlayForm from "./components/OverlayForm";
+import Batches from "./components/Batches";
 function App() {
   return (
     <>
    
       <Navbar />
       <Products></Products>
-      
+      <Batches/>
       <Home />
       <AboutUs />
       <Aim></Aim>

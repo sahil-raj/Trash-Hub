@@ -14,7 +14,7 @@ import {
   Input
 } from '@chakra-ui/react'
 
-export default function OverlayForm() {
+export default function OverlayForm({title="Create Product", Desc="Product Name",place="Kurkure"}) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   
   const OverlayTwo = () => (
@@ -37,21 +37,21 @@ export default function OverlayForm() {
           onOpen()
         }}
       >
-        Create Product
+        {title}
       </Button>
 
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
         {overlay}
         <ModalContent>
-          <ModalHeader>Enter Product Name</ModalHeader>
+          <ModalHeader>Enter {Desc}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-          <Input variant='filled' placeholder='Kurkure' />
+          <Input variant='filled' placeholder={place} />
           </ModalBody>
           <ModalFooter>
             <Stack direction="row" spacing={4}>
             <Button  onClick={onClose}>Cancel</Button>
-            <Button colorScheme='red'>Submit</Button>
+            <Button colorScheme='red' >Submit</Button>
             </Stack>
           </ModalFooter>
         </ModalContent>

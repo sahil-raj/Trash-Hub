@@ -105,7 +105,7 @@ export default function ContactUs() {
                 <Input type="email" placeholder="Email" />
               </InputGroup>
 
-              <Button colorScheme="teal" variant="outline">
+              <Button colorScheme="red" >
                 Submit
               </Button>
             </Stack>
