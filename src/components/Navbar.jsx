@@ -262,40 +262,18 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
   {
     label: "Home",
-    children: [
-      {
-        label: "Link 1",
-        subLabel: "desc",
-        href: "#",
-      },
-      {
-        label: "Link 2",
-        subLabel: "desc",
-        href: "#",
-      },
-    ],
+    href: "/"
   },
   {
     label: "About Us",
-    children: [
-      {
-        label: "Link 1",
-        subLabel: "desc",
-        href: "#",
-      },
-      {
-        label: "Link 2",
-        subLabel: "desc",
-        href: "#",
-      },
-    ],
+    href: "/AboutUs"
   },
   {
     label: "Our Aim",
-    href: "#",
+    href: "/Aim",
   },
   {
     label: "Contact Us",
-    href: "#",
+    href: "/ContactUs",
   },
 ];
