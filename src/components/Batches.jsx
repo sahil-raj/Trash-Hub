@@ -4,7 +4,7 @@ import BatchHeader from './BatchHeader'
 export default function Batches() {
   return (
     <div>
-        <BatchHeader/>
+      <BatchHeader/>
       <Batch title="1"/>
       <Batch title="2" />
       <Batch title="3"/>

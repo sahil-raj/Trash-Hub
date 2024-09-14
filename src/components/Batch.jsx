@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardHeader, CardBody, CardFooter,Stack,Heading,Text, Image, Button} from '@chakra-ui/react'
 import placeHolder from "../assets/placeHolder.jpg"
+import QROverlay from './QROverlay'
 export default function Batch({title="1", img }) {
   return (
 
@@ -24,9 +25,7 @@ export default function Batch({title="1", img }) {
     </CardBody>
 
     <CardFooter>
-      <Button variant='solid' colorScheme='red' >
-        View QR set
-      </Button>
+       <QROverlay/> 
     </CardFooter>
   </Stack>
 </Card>
