@@ -5,11 +5,14 @@ import ContactUs from "./components/ContactUs";
 import Home from "./components/Home";
 import AboutUs from "./components/Aboutus";
 import QRCard from "./components/QRCard";
-
+import Products from "./components/Products";
+import ProductList from "./components/ProductList";
 function App() {
   return (
     <>
+   
       <Navbar />
+      <Products></Products>
       <Home />
       <AboutUs />
       <Aim></Aim>
