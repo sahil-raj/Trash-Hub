@@ -12,7 +12,9 @@ import Aim from "./components/Aim";
 import ContactUs from "./components/ContactUs";
 import ProductList from "./components/ProductList";
 import App from "./App";
-
+import Manufacturer from "./components/Manufacturer";
+import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 
 const rootElement = document.getElementById("root");
 
@@ -39,8 +41,15 @@ const router = createBrowserRouter([{
 {
   path:"/ProductList",
   element:<ProductList/>
-}
-]);
+},
+{
+  path: "/signin",
+  element: <SignIn />
+},
+{
+  path: "/signup",
+  element: <SignUp />
+}]);
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
