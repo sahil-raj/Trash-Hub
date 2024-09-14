@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import AboutUs from "./components/Aboutus";
+import AboutUs from "./components/AboutUs";
 import Aim from "./components/Aim";
 import ContactUs from "./components/ContactUs";
 import ProductList from "./components/ProductList";
