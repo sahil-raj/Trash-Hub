@@ -99,7 +99,7 @@ const SignUp = () => {
               <Input
                 type="text"
                 required
-                color={"white"}
+                color={"black"}
                 variant="outline"
                 placeholder="Name"
                 value={name}
@@ -115,7 +115,7 @@ const SignUp = () => {
               <Input
                 required
                 type="text"
-                color={"white"}
+                color={"black"}
                 variant="outline"
                 placeholder="Username"
                 value={username}
@@ -129,7 +129,7 @@ const SignUp = () => {
               </InputLeftElement>
               <Input
                 type="password"
-                color={"white"}
+                color={"black"}
                 required
                 variant="outline"
                 placeholder="Password"
