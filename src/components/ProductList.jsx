@@ -14,7 +14,7 @@ export default function ProductList() {
           "userId"
         )}/api`
       );
-
+      // console.log(res.data)
       if (res.status == 200) {
         setLoadedProduct(res.data);
       } else {

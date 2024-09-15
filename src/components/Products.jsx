@@ -19,6 +19,7 @@ export default function Products({ title = "Product Title", img, id }) {
       overflow="hidden"
       variant="outline"
       paddingY={6}
+      mx={32}
     >
       <Image
         objectFit="cover"
