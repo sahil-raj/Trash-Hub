@@ -1,4 +1,4 @@
-import { Box, SkeletonText, useToast } from "@chakra-ui/react";
+import { Box, SkeletonText, useToast, Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Products from "./Products";
 import Manufacturer from "./Manufacturer";
