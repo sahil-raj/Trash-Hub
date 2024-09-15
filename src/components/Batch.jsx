@@ -8,7 +8,7 @@ import {
   Text,
   Flex,
 } from "@chakra-ui/react";
-import placeHolder from "../assets/placeHolder.jpg";
+import BatchImg from "../assets/BatchImg.png";
 import QROverlay from "./QROverlay";
 
 export default function Batch({ title = "1", img, size }) {
@@ -24,7 +24,7 @@ export default function Batch({ title = "1", img, size }) {
         <Image
           objectFit="cover"
           maxW={{ base: "100%", sm: "200px" }}
-          src={img ? img : placeHolder}
+          src={img ? img : BatchImg}
           padding={6}
           alt="Product"
         />
