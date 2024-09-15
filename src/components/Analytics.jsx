@@ -7,12 +7,14 @@ import { useState, useEffect } from "react";
 
 export default function Analytics() {
 	const [analyticsData, setAnalyticsData] = useState([]);
+	const [loading, setLoading] = useState(false);
 	const { signedIn } = useIsSignedin();
 	const navigate = useNavigate();
 	const toast = useToast();
 
 	useEffect(() => {
 		const myFunc = async () => {
+			setLoading(true);
 			let res = await axios.get(
 				`https://trashtag.vercel.app/ecoperks/manufacturer/${localStorage.getItem(
 					"userId"
@@ -24,6 +26,7 @@ export default function Analytics() {
 			} else {
 				alert("error fetching data");
 			}
+			setLoading(false);
 		};
 		if (signedIn) {
 			myFunc();
@@ -78,7 +81,8 @@ export default function Analytics() {
 						/>
 					);
 				})}
-			{analyticsData.length == 0 && (
+
+			{loading && analyticsData.length == 0 ? (
 				<Box
 					mt="4rem"
 					ml="25%"
@@ -94,6 +98,12 @@ export default function Analytics() {
 						skeletonHeight="2"
 					/>
 				</Box>
+			) : (
+				analyticsData.length === 0 && (
+					<Heading textAlign={"center"} margin={"2rem 1rem"}>
+						Nothing to show here
+					</Heading>
+				)
 			)}
 		</>
 	);

@@ -1,4 +1,4 @@
-import { Box, SkeletonText, useToast } from "@chakra-ui/react";
+import { Box, SkeletonText, useToast, Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Products from "./Products";
 import Manufacturer from "./Manufacturer";
@@ -8,11 +8,13 @@ import { useNavigate } from "react-router-dom";
 
 export default function ProductList() {
 	const [loadedProduct, setLoadedProduct] = useState([]);
+	const [loading, setLoading] = useState(false);
 	const { signedIn } = useIsSignedin();
 	const navigate = useNavigate();
 	const toast = useToast();
 	useEffect(() => {
 		const loadProducts = async () => {
+			setLoading(true);
 			const res = await axios.get(
 				`https://trashtag.vercel.app/ecoperks/manufacturer/${localStorage.getItem(
 					"userId"
@@ -24,6 +26,7 @@ export default function ProductList() {
 			} else {
 				alert();
 			}
+			setLoading(false);
 		};
 		if (signedIn) {
 			loadProducts();
@@ -48,7 +51,7 @@ export default function ProductList() {
 						/>
 					);
 				})
-			) : (
+			) : loading ? (
 				<Box
 					mt="4rem"
 					ml="25%"
@@ -64,6 +67,10 @@ export default function ProductList() {
 						skeletonHeight="2"
 					/>
 				</Box>
+			) : (
+				<Heading textAlign={"center"} margin={"2rem 1rem"}>
+					Nothing to show here
+				</Heading>
 			)}
 		</>
 	);
