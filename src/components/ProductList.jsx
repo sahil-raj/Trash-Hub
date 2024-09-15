@@ -1,4 +1,4 @@
-import { Box, SkeletonText, useToast, Heading } from "@chakra-ui/react";
+import { Box, SkeletonText, useToast, Heading ,Grid,HStack} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Products from "./Products";
 import Manufacturer from "./Manufacturer";
@@ -42,15 +42,15 @@ export default function ProductList() {
 		<>
 			<Manufacturer />
 			{loadedProduct.length > 0 ? (
-				loadedProduct.map((product) => {
-					return (
+				<Grid templateColumns="repeat(3, 1fr)" gap={4}>
+					{loadedProduct.map((product) => (
 						<Products
 							id={product.id}
 							title={product.name}
 							key={product.id}
 						/>
-					);
-				})
+					))}
+				</Grid>
 			) : loading ? (
 				<Box
 					mt="4rem"
