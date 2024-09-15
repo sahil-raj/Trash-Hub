@@ -23,6 +23,7 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -120,8 +121,10 @@ export default function Navbar() {
         {isLoggedIn && (
           <>
             <Button
+              as={"a"}
               display={{ base: "none", md: "inline-flex" }}
               fontSize={"sm"}
+              href = {"/ProductList"}
               fontWeight={600}
               color={"white"}
               bg={"pink.400"}

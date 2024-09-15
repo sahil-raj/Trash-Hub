@@ -9,8 +9,8 @@ import {
   Icon,
   useColorModeValue,
 } from "@chakra-ui/react";
-
-import { Button, ButtonGroup } from "@chakra-ui/react";
+import placeHolder from "../assets/placeHolder.jpg";
+import { Button } from "@chakra-ui/react";
 import OverlayForm from "./OverlayForm";
 import { Link } from "react-router-dom";
 import features from "../assets/features.png"

@@ -49,7 +49,10 @@ export default function Aim() {
             </Text>
           </Heading>
           <Text color={"gray.500"}>
-          The main goal of Trash Hub is to reduce waste pollution by promoting responsible waste disposal through a tech-driven, incentivized system. We make use of QR codes to guide and reward consumers for promoting waste segregation and disposal.
+            The main goal of Trash Hub is to reduce waste pollution by promoting
+            responsible waste disposal through a tech-driven, incentivized
+            system. We make use of QR codes to guide and reward consumers for
+            promoting waste segregation and disposal.
           </Text>
         </Stack>
         <Flex

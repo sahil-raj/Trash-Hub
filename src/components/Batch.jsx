@@ -6,36 +6,40 @@ import {
   Heading,
   Image,
   Text,
+  Flex,
 } from "@chakra-ui/react";
-import placeHolder from "../assets/placeHolder.jpg";
+import BatchImg from "../assets/BatchImg.png";
 import QROverlay from "./QROverlay";
 
 export default function Batch({ title = "1", img, size }) {
   return (
-    <Card
-      direction={{ base: "column", sm: "row" }}
-      overflow="hidden"
-      variant="outline"
-      paddingY={2}
-    >
-      <Image
-        objectFit="cover"
-        maxW={{ base: "100%", sm: "150px" }}
-        src={img ? img : placeHolder}
-        padding={6}
-        alt="Product"
-      />
+    <Flex justifyContent="center" alignItems="center">
+      <Card
+        direction={{ base: "column", sm: "row" }}
+        overflow="hidden"
+        variant="outline"
+        paddingY={2}
+        my={"1rem"}
+      >
+        <Image
+          objectFit="cover"
+          maxW={{ base: "100%", sm: "200px" }}
+          src={img ? img : BatchImg}
+          padding={6}
+          alt="Product"
+        />
 
-      <Stack>
-        <CardBody>
-          <Heading size="md">Batch {title}</Heading>
-          <Text>Size: {size}</Text>
-        </CardBody>
+        <Stack>
+          <CardBody>
+            <Heading size="md">Batch {title}</Heading>
+            <Text>Size: {size}</Text>
+          </CardBody>
 
-        <CardFooter>
-          <QROverlay id={title} />
-        </CardFooter>
-      </Stack>
-    </Card>
+          <CardFooter>
+            <QROverlay id={title} />
+          </CardFooter>
+        </Stack>
+      </Card>
+    </Flex>
   );
 }

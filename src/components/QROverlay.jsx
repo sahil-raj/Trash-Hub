@@ -62,7 +62,8 @@ export default function QROverlay({ id }) {
             </Grid>
           </ModalBody>
           <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
+            <Button mx={2} colorScheme="red" onClick={()=>window.location.href = `https://trashtag.vercel.app/ecoperks/manufacturer/get_batch_qrset/${id}`}>Print QR Set</Button>
+            <Button mx={2} onClick={onClose}>Close</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
