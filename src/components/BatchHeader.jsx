@@ -53,9 +53,11 @@ export default function BatchHeader({ Name = "Product" }) {
           </Heading>
 
           <Stack spacing={4} direction="row" align="center">
-            <Button colorScheme="red" size="lg">
-              <Link to="/ProductList">Back</Link>
-            </Button>
+            <Link to="/ProductList">
+              <Button colorScheme="red" size="lg">
+                Back
+              </Button>
+            </Link>
 
             <OverlayForm
               title="Create new batch"
