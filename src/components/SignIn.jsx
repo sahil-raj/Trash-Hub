@@ -37,7 +37,7 @@ const SignIn = () => {
         );
 
         if (res.status == 200) {
-            navigate("/ProductList");
+            window.location.href ='/ProductList'
             if (res.data.success) {
                 localStorage.setItem("userId", res.data.id);
             }
@@ -47,6 +47,7 @@ const SignIn = () => {
                 position: "top-right",
             });
             console.log(res.data);
+            setLoading(false)
             return;
         }
         setLoading(false);

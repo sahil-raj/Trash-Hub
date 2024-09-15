@@ -31,7 +31,7 @@ const SignUp = () => {
       }
     );
     if (res.status == 200) {
-      navigate("/signin");
+      window.location.href ='/signin'
     } else {
       {
         toast({
@@ -40,6 +40,7 @@ const SignUp = () => {
           duration: 2000
         });
         console.log(res.data);
+        setLoading(false);
       }
     }
     setLoading(false);
