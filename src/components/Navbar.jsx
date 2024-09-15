@@ -60,7 +60,7 @@ export default function Navbar() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        <Flex flex={{ base: 1 }} justifyContent={'start'} alignItems={'center'}>
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
@@ -69,7 +69,7 @@ export default function Navbar() {
             Trash Hub
           </Text>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
+          <Flex justifyContent={'center'} alignItems={'center'} gap={3} ml={10}>
             <DesktopNav />
           </Flex>
         </Flex>
@@ -124,7 +124,7 @@ export default function Navbar() {
               as={"a"}
               display={{ base: "none", md: "inline-flex" }}
               fontSize={"sm"}
-              href = {"/ProductList"}
+              href={"/ProductList"}
               fontWeight={600}
               color={"white"}
               bg={"pink.400"}
@@ -169,7 +169,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} spacing={4} display={{ base: "none", md: "flex" }}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>

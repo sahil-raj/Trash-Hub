@@ -23,6 +23,12 @@ export default function Batches() {
       );
 
       if (res.status == 200) {
+        if (res.data === "Product Not Found") {
+          alert("Error fetching data");
+          setLoading(false);
+          return;
+        }
+        console.log(res)
         setData(res.data);
       } else {
         alert("Error fetching data");
@@ -42,29 +48,27 @@ export default function Batches() {
   return (
     <div>
       <BatchHeader />
-      {data.length > 0 ? (
-        data.map((el) => <Batch title={el.id} key={el.id} size={el.size} />)
-      ) : loading ? (
-        <Box
-          mt="4rem"
-          ml="25%"
-          width="50%"
-          padding="6"
-          boxShadow="lg"
-          bg="white"
-        >
-          <SkeletonText
-            my="1rem"
-            noOfLines={5}
-            spacing="4"
-            skeletonHeight="2"
-          />
-        </Box>
-      ) : (
-        <Heading>
-          <Text textAlign={"center"}>Nothing to show here</Text>
-        </Heading>
-      )}
+      {data && data.length > 0
+        ? data.map((el) => (
+          <Batch title={el.id} key={el.id} size={el.size} />
+        ))
+        : loading && (
+          <Box
+            mt="4rem"
+            ml="25%"
+            width="50%"
+            padding="6"
+            boxShadow="lg"
+            bg="white"
+          >
+            <SkeletonText
+              my="1rem"
+              noOfLines={5}
+              spacing="4"
+              skeletonHeight="2"
+            />
+          </Box>
+        )}
     </div>
   );
 }
