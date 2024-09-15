@@ -74,9 +74,9 @@ export default function Aim() {
           <Box
             position={"relative"}
             height={"300px"}
-            rounded={"2xl"}
+            rounded={"full"}
             boxShadow={"2xl"}
-            width={"full"}
+            width={"300px"}
             overflow={"hidden"}
           >
             <Image
