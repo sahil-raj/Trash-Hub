@@ -13,6 +13,7 @@ import placeHolder from "../assets/placeHolder.jpg";
 import { Button } from "@chakra-ui/react";
 import OverlayForm from "./OverlayForm";
 import { Link } from "react-router-dom";
+import features from "../assets/features.png";
 import { useEffect, useState } from "react";
 
 export default function Manufacturer() {
@@ -87,18 +88,20 @@ export default function Manufacturer() {
           <Box
             position={"relative"}
             height={"300px"}
-            rounded={"2xl"}
-            boxShadow={"2xl"}
-            width={"full"}
+            rounded={"full"}
+            boxShadow={"300px"}
+            width={"300px"}
             overflow={"hidden"}
+            display={"flex"}
+            justifyContent={"center"}
           >
             <Image
-              alt={"Hero Image"}
+              alt={"Product List"}
               fit={"cover"}
               align={"center"}
               w={"100%"}
               h={"100%"}
-              src={placeHolder}
+              src={features}
             />
           </Box>
         </Flex>
