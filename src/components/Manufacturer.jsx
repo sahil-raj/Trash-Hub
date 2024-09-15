@@ -9,10 +9,11 @@ import {
   Icon,
   useColorModeValue,
 } from "@chakra-ui/react";
-import placeHolder from "../assets/placeHolder.jpg";
+
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import OverlayForm from "./OverlayForm";
 import { Link } from "react-router-dom";
+import features from "../assets/features.png"
 
 export default function Manufacturer({ Name = "Manufacturer" }) {
   return (
@@ -85,14 +86,16 @@ export default function Manufacturer({ Name = "Manufacturer" }) {
             boxShadow={"2xl"}
             width={"full"}
             overflow={"hidden"}
+            display={"flex"}
+            justifyContent={"center"}
           >
             <Image
-              alt={"Hero Image"}
+              alt={"Product List"}
               fit={"cover"}
               align={"center"}
               w={"100%"}
               h={"100%"}
-              src={placeHolder}
+              src={features}
             />
           </Box>
         </Flex>
