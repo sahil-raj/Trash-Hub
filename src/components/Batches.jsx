@@ -21,20 +21,6 @@ export default function Batches() {
           "userId"
         )}/products/${productId}/batches/api`
       );
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const { productId } = useParams();
-  const { signedIn } = useIsSignedin();
-  const navigate = useNavigate();
-  const toast = useToast();
-  useEffect(() => {
-    const loadProducts = async () => {
-      setLoading(true);
-      const res = await axios.get(
-        `https://trashtag.vercel.app/ecoperks/manufacturer/${localStorage.getItem(
-          "userId"
-        )}/products/${productId}/batches/api`
-      );
 
       if (res.status == 200) {
         if (res.data === "Product Not Found") {
