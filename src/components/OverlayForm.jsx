@@ -12,6 +12,7 @@ import {
   Stack,
   Input,
   useToast,
+  position,
 } from "@chakra-ui/react";
 import axios from "axios";
 
@@ -43,14 +44,19 @@ export default function OverlayForm({
     setLoading(true);
     let res;
     if (title === "Create new batch") {
-      res = await axios.post(
-        `https://trashtag.vercel.app/ecoperks/manufacturer/create_batch`,
-        {
-          manufacturer_id: localStorage.getItem("userId"),
-          product_id: id,
-          size: Number(size),
-        }
-      );
+      if (size > 0) {
+        res = await axios.post(
+          `https://trashtag.vercel.app/ecoperks/manufacturer/create_batch`,
+          {
+            manufacturer_id: localStorage.getItem("userId"),
+            product_id: id,
+            size: Number(size),
+          }
+        );
+      } else {
+        toast({ title: `Batch size cannot be ${size}`, position: "top-right" });
+        setLoading(false);
+      }
     } else {
       res = await axios.post(
         `https://trashtag.vercel.app/ecoperks/manufacturer/create_product`,
@@ -60,11 +66,15 @@ export default function OverlayForm({
         }
       );
     }
-    if (res.status == 200) {
-      onClose();
-      window.location.reload();
-    } else {
-      toast("Server Error Occurred");
+    try {
+      if (res.status == 200) {
+        onClose();
+        window.location.reload();
+      } else {
+        toast({ title: "Server Error Occurred", position: "top-right" });
+      }
+    } catch (e) {
+      console.log(e);
     }
     setLoading(false);
   };
