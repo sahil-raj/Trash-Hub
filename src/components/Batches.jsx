@@ -3,7 +3,7 @@ import Batch from "./Batch";
 import BatchHeader from "./BatchHeader";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { Heading, Text } from "@chakra-ui/react";
+import { Box, SkeletonText } from "@chakra-ui/react";
 
 export default function Batches() {
   const [data, setData] = useState([]);
@@ -19,7 +19,7 @@ export default function Batches() {
       if (res.status == 200) {
         setData(res.data);
       } else {
-        alert();
+        alert("Error fetching data");
       }
     };
     loadProducts();
@@ -30,9 +30,21 @@ export default function Batches() {
       {data.length > 0 ? (
         data.map((el) => <Batch title={el.id} key={el.id} size={el.size} />)
       ) : (
-        <Heading textAlign="center">
-          <Text>Nothing to show here</Text>
-        </Heading>
+        <Box
+          mt="4rem"
+          ml="25%"
+          width="50%"
+          padding="6"
+          boxShadow="lg"
+          bg="white"
+        >
+          <SkeletonText
+            my="1rem"
+            noOfLines={5}
+            spacing="4"
+            skeletonHeight="2"
+          />
+        </Box>
       )}
     </div>
   );

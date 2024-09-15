@@ -6,43 +6,47 @@ import {
   Heading,
   Image,
   Button,
+  Flex,
 } from "@chakra-ui/react";
-import placeHolder from "../assets/placeHolder.jpg";
+import ShoppingCart from "../assets/ShoppingCart.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Products({ title = "Product Title", img, id }) {
   const navigate = useNavigate();
 
   return (
-    <Card
-      direction={{ base: "column", sm: "row" }}
-      overflow="hidden"
-      variant="outline"
-      paddingY={6}
-      mx={32}
-    >
-      <Image
-        objectFit="cover"
-        maxW={{ base: "100%", sm: "200px" }}
-        src={img ? img : placeHolder}
-        alt="Product"
-      />
+    <Flex justifyContent="center" alignItems="center">
+      <Card
+        direction={{ base: "column", sm: "row" }}
+        overflow="hidden"
+        variant="outline"
+        paddingY={1}
+        align={"center"}
+        marginY={"1rem"}
+      >
+        <Image
+          objectFit="cover"
+          maxW={{ base: "100%", sm: "200px" }}
+          src={img ? img : ShoppingCart}
+          alt="Product"
+        />
 
-      <Stack>
-        <CardBody>
-          <Heading size="md">{title}</Heading>
-        </CardBody>
+        <Stack>
+          <CardBody>
+            <Heading size="md">{title}</Heading>
+          </CardBody>
 
-        <CardFooter>
-          <Button
-            onClick={() => navigate(`/Batches/${id}`)}
-            variant="solid"
-            colorScheme="red"
-          >
-            View all batches
-          </Button>
-        </CardFooter>
-      </Stack>
-    </Card>
+          <CardFooter>
+            <Button
+              onClick={() => navigate(`/Batches/${id}`)}
+              variant="solid"
+              colorScheme="red"
+            >
+              View all batches
+            </Button>
+          </CardFooter>
+        </Stack>
+      </Card>
+    </Flex>
   );
 }

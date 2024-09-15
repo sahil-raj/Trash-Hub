@@ -12,26 +12,33 @@ import {
   Button,
 } from "@chakra-ui/react";
 import QRCard from "./QRCard";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function QROverlay({ id }) {
-  console.log(id);
-  const { isOpen, onClose } = useDisclosure();
-  const [scrollBehavior] = React.useState("inside");
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [scrollBehavior, setScrollBehavior] = React.useState("inside");
+
+  const [qr, setQr] = useState([]);
+  useEffect(() => {
+    const x = async () => {
+      let res = await axios.get(
+        `https://trashtag.vercel.app/ecoperks/manufacturer/get_batch_qrset/${id}/api`
+      );
+
+      if (res.status == 200) {
+        setQr(res.data);
+      } else {
+        alert("error");
+      }
+    };
+    x();
+  }, []);
 
   const btnRef = React.useRef(null);
   return (
     <div>
-      <Button
-        mt={3}
-        ref={btnRef}
-        onClick={() => {
-          window.open(
-            `https://trashtag.vercel.app/ecoperks/manufacturer/get_batch_qrset/${id}`,
-            "_blank"
-          );
-        }}
-        colorScheme="red"
-      >
+      <Button mt={3} ref={btnRef} onClick={onOpen} colorScheme="red">
         View QR set
       </Button>
 
@@ -48,7 +55,10 @@ export default function QROverlay({ id }) {
           <ModalCloseButton />
           <ModalBody>
             <Grid templateColumns="repeat(4, 1fr)" gap={4}>
-              <QRCard qrHeading="heading" qrData="abcd" qrText="apple" />
+              {qr.length > 0 &&
+                qr.map((q, i) => {
+                  return <QRCard key={q} qrData={q} qrHeading={i} qrText={q} />;
+                })}
             </Grid>
           </ModalBody>
           <ModalFooter>

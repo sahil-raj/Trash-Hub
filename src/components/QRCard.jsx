@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { QRCodeSVG } from "qrcode.react";
 
-const QRCard = ({ qrHeading, qrText, qrData, styleClass }) => {
+const QRCard = ({ qrHeading = "?", qrText, qrData, styleClass }) => {
   return (
     <Card maxW="sm" align="center" textAlign="center">
       <CardBody>
