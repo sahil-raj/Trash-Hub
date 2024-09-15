@@ -82,9 +82,9 @@ export default function Manufacturer({ Name = "Manufacturer" }) {
           <Box
             position={"relative"}
             height={"300px"}
-            rounded={"2xl"}
-            boxShadow={"2xl"}
-            width={"full"}
+            rounded={"full"}
+            boxShadow={"300px"}
+            width={"300px"}
             overflow={"hidden"}
             display={"flex"}
             justifyContent={"center"}

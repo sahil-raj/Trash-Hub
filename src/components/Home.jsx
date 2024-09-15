@@ -73,9 +73,9 @@ export default function Home() {
           <Box
             position={"relative"}
             height={"300px"}
-            rounded={"2xl"}
-            boxShadow={"2xl"}
-            width={"full"}
+            rounded={"full"}
+            boxShadow={"300px"}
+            width={"300px"}
             overflow={"hidden"}
           >
             <Image
@@ -84,7 +84,7 @@ export default function Home() {
               align={"center"}
               w={"100%"}
               h={"100%"}
-              src={"bg.jpg"}
+              src={"Trash.jpeg"}
             />
           </Box>
         </Flex>
