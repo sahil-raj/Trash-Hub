@@ -51,7 +51,7 @@ const SignUp = () => {
       backgroundColor={""}
       height={"100%"}
       padding={40}
-      mb={-96}
+      mb={-48}
       // bgImage={"/bg.jpg"}
       bgPosition="center"
       bgRepeat="no-repeat"

@@ -58,7 +58,7 @@ const SignIn = () => {
             backgroundColor={""}
             height={"100%"}
             padding={40}
-            mb={-96}
+            mb={-48}
             bgPosition="center"
             bgRepeat="no-repeat"
             overflowX={"hidden"}
@@ -77,7 +77,7 @@ const SignIn = () => {
                 display={"flex"}
                 alignItems={"center"}
                 justifyContent={"center"}
-                mb={10}
+                mb={12}
             >
                 <Box
                     display="flex"

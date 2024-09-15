@@ -12,12 +12,13 @@ import {
 
 export default function Home() {
   return (
-    <Container overflowX={"hidden"} maxW={"7xl"}>
+    <Container overflowX={"hidden"} maxW={"7xl"} mb={-32}>
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 20, md: 28 }}
         direction={{ base: "column", md: "row" }}
+        mb={3}
       >
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>
           <Heading
@@ -50,10 +51,7 @@ export default function Home() {
           <Text color={"gray.500"}>
             TrashHub is a comprehensive waste management platform designed to
             address various aspects of waste disposal amd recycling. <br></br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-            assumenda ipsa consectetur dolores deleniti corporis quidem culpa
-            nemo architecto sint, voluptatem dolor at quas maiores, sunt
-            laudantium magni placeat. Rerum?
+            The main goal of Trash Hub is to reduce waste pollution by promoting responsible waste disposal through a tech-driven, incentivized system. We make use of QR codes to guide and reward consumers for promoting waste segregation and disposal.
           </Text>
         </Stack>
         <Flex

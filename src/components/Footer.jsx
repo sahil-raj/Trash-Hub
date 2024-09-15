@@ -3,7 +3,7 @@ import { Box, Text, Link, Stack } from "@chakra-ui/react";
 function Footer() {
   return (
     <Box
-      mt={96}
+      mt={44}
       py={4}
       backgroundColor="gray.800"
       color="white"
