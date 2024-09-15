@@ -12,7 +12,6 @@ import {
   Stack,
   Input,
   useToast,
-  position,
 } from "@chakra-ui/react";
 import axios from "axios";
 

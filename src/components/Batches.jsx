@@ -3,10 +3,24 @@ import Batch from "./Batch";
 import BatchHeader from "./BatchHeader";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import { Box, SkeletonText, useToast } from "@chakra-ui/react";
+import { Box, Heading, Text, SkeletonText, useToast } from "@chakra-ui/react";
 import { useIsSignedin } from "../hooks/useIsSignedIn";
 
 export default function Batches() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { productId } = useParams();
+  const { signedIn } = useIsSignedin();
+  const navigate = useNavigate();
+  const toast = useToast();
+  useEffect(() => {
+    const loadProducts = async () => {
+      setLoading(true);
+      const res = await axios.get(
+        `https://trashtag.vercel.app/ecoperks/manufacturer/${localStorage.getItem(
+          "userId"
+        )}/products/${productId}/batches/api`
+      );
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const { productId } = useParams();

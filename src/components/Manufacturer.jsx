@@ -9,13 +9,18 @@ import {
   Icon,
   useColorModeValue,
 } from "@chakra-ui/react";
-import placeHolder from "../assets/placeHolder.jpg";
 import { Button } from "@chakra-ui/react";
 import OverlayForm from "./OverlayForm";
 import { Link } from "react-router-dom";
-import features from "../assets/features.png"
+import features from "../assets/features.png";
+import { useEffect, useState } from "react";
 
-export default function Manufacturer({ Name = "Manufacturer" }) {
+export default function Manufacturer() {
+  const [Name, setName] = useState("Manufacturer");
+  useEffect(() => {
+    setName(localStorage.getItem("username"));
+  }, []);
+
   return (
     <Container overflowX={"hidden"} maxW={"7xl"}>
       <Stack
@@ -44,11 +49,11 @@ export default function Manufacturer({ Name = "Manufacturer" }) {
                 zIndex: -1,
               }}
             >
-              Namaste!
+              Namaste
             </Text>
             <br />
             <Text as={"span"} color={"red.400"}>
-              {Name}
+              {Name}!
             </Text>
           </Heading>
           <Text color={"gray.500"}>
